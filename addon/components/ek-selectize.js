@@ -157,7 +157,8 @@ export default Ember.Component.extend({
         let placeholder = this.get('placeholder');
 
         let $select = this.$().selectize({
-            placeholder: placeholder
+            placeholder: placeholder,
+            inputClass: 'form-control selectize-input'
         });
 
         this._selectize = $select[0].selectize;
