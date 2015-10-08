@@ -235,5 +235,6 @@ export default Ember.Component.extend({
     */
     destroy: Ember.on('willDestroyElement', function() {
         this._selectize.destroy();
+        this._selectize._events = {change: []}; // HACK see https://github.com/brianreavis/selectize.js/issues/734
     }),
 });
