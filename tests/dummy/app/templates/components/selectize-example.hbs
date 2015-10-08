@@ -1,0 +1,55 @@
+
+<form class="form-inline">
+
+    <div class="form-group">
+    {{#ek-selectize
+      value=selectedType
+      placeholder="select a type..."}}
+        {{#each types as |item|}}
+            <option value={{item.id}}> {{item.label}} </option>
+        {{/each}}
+    {{/ek-selectize}}
+    </div>
+
+    {{#if content.length}}
+        <div class="form-group">
+
+            {{ek-selectize
+              content=content
+              value=selectedObject
+              optionValuePath='content._id'
+              optionLabelPath='content.title'
+              placeholder="search an object..."
+              onSearch="searchTerm"}}
+
+        </div>
+    {{/if}}
+</form>
+
+    <p><b>selected type:</b> {{selectedType}}</p>
+    <p><b>selected object:</b> {{selectedObject}}</p>
+    <p><b>search term:</b> {{searchTerm}}</p>
+    <p><b>number of types:</b> {{types.length}}</p>
+    <p><b>number of results:</b> {{content.length}}</p>
+
+<form>
+    {{#each content as |item|}}
+        {{item.title}}
+    {{/each}}
+
+    {{#ek-selectize
+      value=selectedType
+      placeholder="select a type..."}}
+        {{#each types as |item|}}
+            <option value={{item.id}}> {{item.label}} </option>
+        {{/each}}
+    {{/ek-selectize}}
+
+    {{ek-selectize
+      content=content
+      value=selectedObject
+      optionValuePath='content._id'
+      optionLabelPath='content.title'
+      placeholder="search an object..."
+      onSearch="searchTerm"}}
+</form>
