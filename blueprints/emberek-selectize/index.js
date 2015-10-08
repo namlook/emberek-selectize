@@ -1,5 +1,5 @@
 module.exports = {
-  description: ''
+  description: '',
 
   normalizeEntityName: function() {
     // allows us to run ember -g emberek-selectize and not blow up
@@ -8,7 +8,7 @@ module.exports = {
   },
 
   afterInstall: function() {
-    return this.addBowerPackageToProject('selectize#0.12.1');
+    return this.addBowerPackageToProject('selectize', '0.12.1');
   }
 
 };
