@@ -1,4 +1,10 @@
 
-.ember-view.x-selectize.single {
+.selectize-control.single .selectize-input {
+    width: 100%;
     min-width: 160px;
+}
+
+.selectize-input {
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
